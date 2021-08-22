@@ -11,7 +11,14 @@ public class CylenderPrimitive : Primitive
     }
     
     // POLYMORPHISM
-    protected override void PrimitiveClicked(){
+    public override void PrimitiveClicked(){
         Debug.Log("[CylenderPrimitive] I was clicked : " + this.primitiveName);
+        
+        var color =  Random.ColorHSV();
+
+        // always blue-ish
+        color.b = 255;
+        
+        this.SetColor( color );
     }
 }

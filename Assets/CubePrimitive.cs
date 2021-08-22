@@ -11,8 +11,15 @@ public class CubePrimitive : Primitive
     }
     
     // POLYMORPHISM
-    protected override void PrimitiveClicked(){
+    public override void PrimitiveClicked(){
         Debug.Log("[CubePrimitive] I was clicked : " + this.primitiveName);
+
+        var color =  Random.ColorHSV();
+        
+        // always green-ish
+        color.g = 255;
+        
+        this.SetColor( color );
     }
 
 }

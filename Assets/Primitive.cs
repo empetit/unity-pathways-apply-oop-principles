@@ -3,8 +3,8 @@ using UnityEngine;
 public class Primitive : MonoBehaviour
 {
 
-    // ENCAPSULATION
-    protected string primitiveName { get; private set;}
+    [SerializeField]
+    protected string primitiveName = "BasePrimitive";
     // ENCAPSULATION
     protected Color primitiveColor{ get; private set;}
 
@@ -12,6 +12,10 @@ public class Primitive : MonoBehaviour
     protected void InitPrimitive()
     {
         this.primitiveColor = Random.ColorHSV();
+    }
+
+    void Update(){
+        this.GetComponent<Renderer>().materials[0].color = this.primitiveColor;
     }
 
     // ABSTRACTION
@@ -24,7 +28,7 @@ public class Primitive : MonoBehaviour
     }
     
     //POLYMORPHISM
-    protected virtual void PrimitiveClicked(){
+    public virtual void PrimitiveClicked(){
         Debug.Log(this.primitiveName);
     }
 }

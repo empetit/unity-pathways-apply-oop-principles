@@ -15,4 +15,8 @@ public class oop : MonoBehaviour
     {
         
     }
+
+    public void InteractiWithPrimitive(Primitive p){
+        p.PrimitiveClicked();
+    }
 }

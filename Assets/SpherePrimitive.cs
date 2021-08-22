@@ -12,7 +12,14 @@ public class SpherePrimitive : Primitive
     }
     
     // POLYMORPHISM
-    protected override void PrimitiveClicked(){
+    public override void PrimitiveClicked(){
         Debug.Log("[SpherePrimitive] I was clicked : " + this.primitiveName);
+
+        var color =  Random.ColorHSV();
+        
+        // always red-ish
+        color.r = 255;
+
+        this.SetColor( color );
     }
 }
